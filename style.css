@@ -1,85 +1,97 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
-.main-container {
-  height: auto;
-}
-.header-section {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  padding: 10px;
-  color: black;
-}
-.logo-header-section {
-  padding: 10px;
+
+body {
   font-family: "Tomorrow", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-  background: -webkit-linear-gradient(red, black);
+  background-color: #f9f9f9;
+  color: #222;
+  line-height: 1.6;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo-header-section h1 {
+  font-weight: 700;
+  font-size: 28px;
+  background: linear-gradient(to right, #e91e63, #000);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .header-info-section {
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  margin: 10px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
+
+.header-info-section h2 {
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.header-info-section h2:hover {
+  color: #00bcd4;
+}
+
 .login-section {
-  display: grid;
-  grid-template-columns: 100px 100px;
+  display: flex;
   gap: 10px;
-  justify-content: end;
 }
+
 .login-section button {
-  background-color: lightseagreen;
-  color: black;
+  background-color: #00bcd4;
+  color: white;
   border: none;
-  border-radius: 50px;
-  font-size: bold;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 .login-section button:hover {
-  color: rgb(24, 24, 110);
+  background-color: #008ba3;
 }
 
 .blog-section {
+  margin-top: 40px;
   display: grid;
   row-gap: 30px;
-  margin: 50px;
   justify-items: center;
-  font-family: "Tomorrow", sans-serif;
-  max-width: 1000px;
-  margin-inline: auto;
 }
 
 .blog-info-section {
-  display: grid;
-  row-gap: 15px;
   text-align: center;
 }
 
 .article-title {
-  color: black;
+  font-size: 20px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .article-content {
   display: flex;
-  flex-wrap: wrap;
   gap: 15px;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-}
-
-.article-content p {
-  color: green;
-}
-
-.article-content p:hover {
-  color: red;
+  justify-content: center;
 }
 
 .article-content img {
@@ -88,71 +100,92 @@
   border-radius: 50%;
 }
 
+.article-content p {
+  color: green;
+  font-size: 14px;
+}
+
+.article-content p:hover {
+  color: red;
+}
+
 .blog-content {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 20px;
   padding: 20px;
-  justify-items: center;
-  text-align: justify;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .blog-image img {
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   border-radius: 10px;
 }
 
 .blog-text-section {
-  max-width: 700px;
+  max-width: 800px;
+  text-align: justify;
 }
 
 .blog-text-section h2 {
   font-size: 1rem;
-  line-height: 1.6;
   color: #333;
 }
+
 .comment-section {
-  display: grid;
-  row-gap: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
+
+.comment-section h3 {
+  margin-bottom: 15px;
+}
+
 .comment-prompt {
-  display: grid;
-  grid-template-columns: auto 1fr;
+  display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 10px;
 }
+
 .comment-prompt img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
+
 textarea {
   width: 100%;
   padding: 10px;
-  font-size: 16px;
+  font-size: 14px;
   resize: none;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .header-section {
-    display: grid;
-    grid-template-rows: repeat(3, 60px);
-    grid-template-columns: auto;
-    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
     text-align: center;
-    padding: 20px;
   }
+
   .header-info-section {
-    display: grid;
-    column-gap: 20px;
+    justify-content: center;
   }
+
   .article-content {
     flex-direction: column;
   }
 
   .blog-content {
-    padding: 10px;
+    padding: 15px;
   }
 
   .blog-text-section h2 {
